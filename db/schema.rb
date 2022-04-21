@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20210126090143) do
 
   create_table "foods", force: :cascade do |t|
     t.bigint "shop_id", null: false
-    t.bigint "order_id", null: false
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
