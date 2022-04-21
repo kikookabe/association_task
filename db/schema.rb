@@ -75,6 +75,5 @@ ActiveRecord::Schema.define(version: 20210126090143) do
   add_foreign_key "order_foods", "orders"
   add_foreign_key "orders", "customers"
   add_foreign_key "orders", "addresses"
-  add_foreign_key "foods", "orders"
   add_foreign_key "orders", "foods"
 end
