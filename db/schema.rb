@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20210126090143) do
     t.datetime "updated_at", null: false
     t.bigint "customer_id", null: false
     t.bigint "address_id", null: false
+    t.bigint "food_id", null: false
     t.index ["address_id"], name: "index_orders_on_address_id"
     t.index ["customer_id"], name: "index_orders_on_customer_id"
   end
@@ -76,4 +77,5 @@ ActiveRecord::Schema.define(version: 20210126090143) do
   add_foreign_key "orders", "customers"
   add_foreign_key "orders", "addresses"
   add_foreign_key "foods", "orders"
+  add_foreign_key "orders", "foods"
 end
