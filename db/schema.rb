@@ -70,10 +70,19 @@ ActiveRecord::Schema.define(version: 20210126090143) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "foods_orders", force: :cascade do |t|
+    t.bigint "food_id", null: false
+    t.bigint "order_id", null: false
+    t.index ["food_id"], name: "index_foods_orders_on_food_id"
+    t.index ["order_id"], name: "index_foods_orders_on_order_id"
+  end
+
   add_foreign_key "foods", "shops"
   add_foreign_key "order_foods", "foods"
   add_foreign_key "order_foods", "orders"
   add_foreign_key "orders", "customers"
   add_foreign_key "orders", "addresses"
   add_foreign_key "orders", "foods"
+  add_foreign_key "foods_orders", "foods"
+  add_foreign_key "foods_orders", "orders"
 end
